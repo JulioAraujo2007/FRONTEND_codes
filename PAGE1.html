@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arquatro - Home</title>
+  <style>
+    /* Reset básico */
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Cabeçalho com imagem de fundo e overlay cinza */
+    header {
+      position: relative;
+      width: 100vw;
+      height: 180px;
+      background: 
+        linear-gradient(rgba(50, 50, 50, 0.6), rgba(50, 50, 50, 0.6)),
+        url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 3rem;
+      letter-spacing: 6px;
+      margin: 0;
+      font-weight: 900;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    /* Menu fixo abaixo do header */
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 40px auto 60px;
+    }
+
+    section h2 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 15px;
+      flex: 1 1 30%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #007BFF;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsivo simples */
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+      }
+
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ARQUATRO</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="cursos.html">Cursos</a>
+    <a href="portifolio.html">Portfólio</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Bem-vindo à Arquatro</h2>
+      <p>Somos uma empresa especializada em arquitetura contemporânea que une inovação, sustentabilidade e design para transformar espaços.</p>
+    </section>
+
+    <section>
+      <h2>Projetos em Destaque</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Projeto Residencial" />
+          <h3>Residência Modernista</h3>
+          <p>Design inovador e sustentável para moradia familiar.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=600&q=80" alt="Projeto Comercial" />
+          <h3>Escritório Corporativo</h3>
+          <p>Espaço funcional e moderno para empresas de tecnologia.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=600&q=80" alt="Projeto de Interiores" />
+          <h3>Interiores Minimalistas</h3>
+          <p>Ambientes integrados, práticos e cheios de estilo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cursos em Destaque</h2>
+      <p>Aprenda com especialistas e eleve seu conhecimento em arquitetura.</p>
+      <a href="cursos.html" class="cta-button">Conheça nossos cursos</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Arquatro - Todos os direitos reservados | contato@arquatro.com.br
+  </footer>
+</body>
+</html>
