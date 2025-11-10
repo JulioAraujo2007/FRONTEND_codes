@@ -1,3 +1,329 @@
-.cabeçalho{
-    background-image: url(https://www.meumoveldemadeira.com.br/cdn/shop/collections/banner-testeira-escritorio-desk_1000x335.jpg?v=1738677031);
+/* ============================================================
+   ESTILO GLOBAL - SITE ARQUATRO
+   Paleta: Azul (#005CFF) | Branco (#FFFFFF) | Vermelho (#E63946)
+   ============================================================ */
+
+/* ======== Reset ======== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #ffffff;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   CABEÇALHO (HEADER)
+   ============================================================ */
+.hero-header {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  background: linear-gradient(180deg, #005CFF 0%, #003EAA 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-header .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.site-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #d8e5ff;
+  margin-top: 8px;
+  z-index: 2;
+}
+
+/* ===== Navegação ===== */
+.hero-header nav {
+  position: relative;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.15);
+  width: 100%;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-header nav a {
+  color: #ffffff;
+  font-weight: 600;
+  margin: 0 10px;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.hero-header nav a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hero-header nav a.active {
+  background: #ffffff;
+  color: #005CFF;
+}
+
+/* ============================================================
+   CONTEÚDO PRINCIPAL (MAIN)
+   ============================================================ */
+main {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #005CFF;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #5a5a5a;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   TILES INTERATIVAS (para todas as páginas)
+   ============================================================ */
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+.tile {
+  display: inline-block;
+  width: 250px;
+  height: 180px;
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background: #f5f7fa;
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.tile::before {
+  content: "";
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  width: 100%;
+  height: 60%;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.tile .details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  color: white;
+  z-index: 3;
+}
+
+.tile .details span {
+  display: block;
+  opacity: 0;
+  position: relative;
+  top: 40px;
+  transition: all 0.3s ease;
+}
+
+.tile .title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tile .info {
+  font-size: 13px;
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+/* Hover Effect */
+.tile:hover {
+  transform: translateY(-5px);
+}
+
+.tile:hover img {
+  transform: scale(1.1);
+}
+
+.tile:hover::before {
+  top: 40%;
+  opacity: 1;
+}
+
+.tile:hover .details span {
+  opacity: 1;
+  top: 0;
+}
+
+.tile:hover .title {
+  transition-delay: 0.15s;
+}
+
+.tile:hover .info {
+  transition-delay: 0.25s;
+}
+
+/* ============================================================
+   FORMULÁRIOS (Contato)
+   ============================================================ */
+.contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contato input, 
+.contato textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.contato textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contato button {
+  background: #005CFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contato button:hover {
+  background: #003EAA;
+}
+
+.contato button.danger {
+  background: #E63946;
+}
+
+.contato button.danger:hover {
+  background: #C62836;
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+footer {
+  text-align: center;
+  color: #5a5a5a;
+  padding: 25px;
+  border-top: 2px solid #E0E0E0;
+  margin-top: 50px;
+  background: #F5F7FA;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   ANIMAÇÕES DE ENTRADA (fade suave)
+   ============================================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero, .tiles, .contato form {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero-header {
+    min-height: 260px;
+  }
+  .site-title {
+    font-size: 2.4rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .tiles {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tile {
+    width: 90%;
+    height: 220px;
+  }
+  .contato form {
+    width: 90%;
+  }
 }
